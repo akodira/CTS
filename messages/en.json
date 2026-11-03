@@ -1,0 +1,40 @@
+{
+  "Metadata": {
+    "title": "Customer Ticketing System",
+    "description": "A bilingual customer support platform for submitting, tracking and resolving service requests."
+  },
+  "Header": {
+    "brand": "Customer Ticketing System",
+    "brandShort": "CTS",
+    "switchLanguage": "Switch language",
+    "english": "English",
+    "arabic": "العربية",
+    "skipToContent": "Skip to content"
+  },
+  "Home": {
+    "badge": "Phase 1 · Foundation",
+    "title": "Support that moves at your pace.",
+    "subtitle": "A bilingual customer portal and a focused support console — one place to raise, track and resolve every service request.",
+    "portalTitle": "Customer portal",
+    "portalBody": "Register, submit a request, follow the conversation and confirm the resolution.",
+    "consoleTitle": "Support console",
+    "consoleBody": "Team queues, assignment, SLA tracking, private notes and operational reporting.",
+    "bilingualTitle": "English and Arabic",
+    "bilingualBody": "Full right-to-left layout, localized dates and bilingual knowledgebase content.",
+    "statusTitle": "Foundation status",
+    "statusBody": "This preview validates the project foundation. Customer authentication and ticket workflows are delivered in the next phases.",
+    "statusItems": {
+      "app": "Next.js application shell with English and Arabic routing",
+      "schema": "Database schema, constraints and RLS policies prepared as SQL migrations",
+      "security": "Server-only secrets, private storage bucket and security headers configured",
+      "deploy": "Deployment verification pending Supabase and Vercel connection"
+    },
+    "plannedTitle": "Next up",
+    "plannedBody": "Phase 2 adds registration, email verification, sign-in and role-aware profiles."
+  },
+  "Footer": {
+    "rights": "Customer Ticketing System",
+    "note": "Preview build · Phase 1 foundation",
+    "healthLink": "Check system health"
+  }
+}
