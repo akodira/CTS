@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Customer Ticketing System (CTS) - bilingual customer portal and support console",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.12.0 <25"
   },
   "scripts": {
     "dev": "next dev",
@@ -19,7 +19,7 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "db:push": "supabase db push",
+    "db:push": "supabase db push --remote --yes",
     "db:types": "supabase gen types typescript --local > src/types/database.types.ts"
   },
   "dependencies": {

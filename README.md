@@ -93,7 +93,7 @@ The database schema and RLS policies for those features are prepared, but
 
 ### Prerequisites
 
-- Node.js 22.12+ (built and tested here with Node 24.22.0, npm 11.19.1)
+- Node.js 22.12–24 (built and tested here with Node 24.22.0, npm 11.19.1). The upper bound is pinned so a future Node major cannot silently break the Vercel build.
 - Git
 - Optional for local database work: Docker Desktop and the Supabase CLI
   (see [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md), step B1)
