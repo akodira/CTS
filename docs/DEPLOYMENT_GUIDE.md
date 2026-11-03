@@ -31,7 +31,7 @@ gh auth login
 ```
 
 ### 3) Node.js
-Use Node.js 22.12+ (project tested with 24.22.0). Verify:
+Use Node.js 22.12–24 (project tested with 24.22.0; the `engines` range blocks Node 25+ so a new major cannot break the Vercel build). Verify:
 
 ```powershell
 node --version
@@ -142,9 +142,9 @@ Link the project:
 supabase link --project-ref <project-ref>
 ```
 
-Push migrations:
+Push migrations to the hosted project. **Supabase CLI v3 targets the local stack by default**, so `--remote` is required:
 ```powershell
-supabase db push
+supabase db push --remote --yes
 ```
 
 Regenerate types (optional but useful):
@@ -177,7 +177,7 @@ select id,name from public.sla_policies where is_default and is_active; -- one r
 ```
 
 ### Storage
-Migration `0009_storage_buckets.sql` creates the private `attachments` bucket (25 MiB, allow-listed MIME types). No storage policies are created. Until a download route with authorization exists, direct client access is not possible — this is intentional.
+Migration `20261101000009_storage_buckets.sql` creates the private `attachments` bucket (25 MiB, allow-listed MIME types). No storage policies are created. Until a download route with authorization exists, direct client access is not possible — this is intentional.
 
 ## B5: Import to Vercel, set environment variables, deploy
 

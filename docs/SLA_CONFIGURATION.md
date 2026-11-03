@@ -1,6 +1,6 @@
 # SLA Configuration
 
-Approved Phase 0 defaults. They are seeded in `0010_seed_reference_data.sql` and
+Approved Phase 0 defaults. They are seeded in `20261101000010_seed_reference_data.sql` and
 **not yet enforced by any running job**. The database stores policies, calendars
 and clock rows; the evaluator/cron that advances states and sends escalations is
 scheduled for Phase 5.

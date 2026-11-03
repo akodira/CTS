@@ -249,7 +249,7 @@ Developer ──push──> GitHub (main / develop)
   while the product is being built. Do not store real customer data until a
   separate staging project exists.
 - Environment variables are scoped per Vercel environment.
-- Migrations are applied with `supabase db push` or the `migrations.yml`
+- Migrations are applied with `supabase db push --remote --yes` or the `migrations.yml`
   workflow (single `production` environment for now).
 - Domain and email DNS are configured at the owner's registrar/provider. See
   [DEPLOYMENT_GUIDE](DEPLOYMENT_GUIDE.md).

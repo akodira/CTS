@@ -28,16 +28,16 @@ Target: Supabase PostgreSQL 17.
 
 | File | Purpose |
 | --- | --- |
-| `0001_extensions_and_schemas.sql` | `private` schema, `set_updated_at()` |
-| `0002_identity_and_org.sql` | Profiles, roles, organizations, departments, teams, invitations, auth triggers |
-| `0003_catalog_and_custom_fields.sql` | Categories, priorities, custom-field definitions, depth guard |
-| `0004_ticketing_core.sql` | Enums, counters, tickets, history, transitions, messages, attachments, assignments |
-| `0005_sla_and_calendars.sql` | Calendars, holidays, SLA policies, clocks, events, escalations |
-| `0006_operations.sql` | Notifications, email outbox, audit log, settings |
-| `0007_knowledgebase_and_feedback.sql` | KB categories/articles/feedback/relations, CSAT |
-| `0008_functions_and_rls.sql` | Authorization helpers, allocator, business-hours math, RLS, grants |
-| `0009_storage_buckets.sql` | Private `attachments` bucket (25 MiB, MIME allow-list) |
-| `0010_seed_reference_data.sql` | Roles, priorities, transitions, calendar, SLA policies, escalation rules, settings |
+| `20261101000001_extensions_and_schemas.sql` | `private` schema, `set_updated_at()` |
+| `20261101000002_identity_and_org.sql` | Profiles, roles, organizations, departments, teams, invitations, auth triggers |
+| `20261101000003_catalog_and_custom_fields.sql` | Categories, priorities, custom-field definitions, depth guard |
+| `20261101000004_ticketing_core.sql` | Enums, counters, tickets, history, transitions, messages, attachments, assignments |
+| `20261101000005_sla_and_calendars.sql` | Calendars, holidays, SLA policies, clocks, events, escalations |
+| `20261101000006_operations.sql` | Notifications, email outbox, audit log, settings |
+| `20261101000007_knowledgebase_and_feedback.sql` | KB categories/articles/feedback/relations, CSAT |
+| `20261101000008_functions_and_rls.sql` | Authorization helpers, allocator, business-hours math, RLS, grants |
+| `20261101000009_storage_buckets.sql` | Private `attachments` bucket (25 MiB, MIME allow-list) |
+| `20261101000010_seed_reference_data.sql` | Roles, priorities, transitions, calendar, SLA policies, escalation rules, settings |
 
 Counts: **37 public tables**, 3 enums, 18 functions (15 `private`, 3 `public`),
 1 storage bucket, 5 roles, 4 priorities, 30 transition rules, 4 priority SLA
@@ -421,7 +421,7 @@ Management viewers are not staff in the helper functions; they cannot read
 tickets. Their reporting access will be implemented through dedicated
 read-only views/RPCs in Phase 6. This is intentional and recorded as a gap.
 
-Full policy text: `supabase/migrations/0008_functions_and_rls.sql`.
+Full policy text: `supabase/migrations/20261101000008_functions_and_rls.sql`.
 
 ## 14. Verification queries (to run after migrations)
 

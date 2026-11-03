@@ -1,7 +1,7 @@
 # Ticket Workflow
 
 > The rules below match `public.ticket_transition_rules` seeded in
-> `0010_seed_reference_data.sql` and the TypeScript mirror in
+> `20261101000010_seed_reference_data.sql` and the TypeScript mirror in
 > `src/domain/ticket-status.ts`. The database is the authority; the TypeScript
 > copy drives UI affordances and unit tests. Any change must update both, plus
 > a migration for existing environments.

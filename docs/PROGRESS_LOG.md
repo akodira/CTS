@@ -127,6 +127,44 @@ dates; the repository was not under Git until the owner pushes it.
   migration has been applied to it.
 - No deployment URL exists.
 
+## 2026-11-03 - GitHub upload and deployment troubleshooting
+
+### Repository
+
+- Owner created `https://github.com/akodira/cts` and uploaded the Phase 1 tree
+  through the GitHub web interface (commit `69fba08`).
+- The web uploader skipped dotfiles, so `.gitignore`, `.env.example` and
+  `.github/` were missing from the remote.
+- Local work was reconciled onto `origin/main` (`git reset --mixed`) and
+  committed as `70c4f01`: Supabase CLI v3 config fixes, migration filename
+  renames, single-project documentation, and the missing dotfiles. **Not yet
+  pushed.**
+
+### Supabase
+
+- One project only (owner decision, repeated). All docs updated from the
+  original staging + production plan to single-project mode.
+- `supabase/config.toml`: `[inbucket]` -> `[local_smtp]`, `[auth.email]
+  enable_signup` -> `enabled` (CLI v3 rejects the old keys).
+- Migrations renamed from `000N_name.sql` to `<14-digit timestamp>_name.sql`;
+  CLI v3 ignores names that are not in that format.
+- `supabase db push` -> `supabase db push --remote --yes` in docs, the
+  `migrations.yml` workflow and the `db:push` npm script, because CLI v3
+  targets the local stack by default.
+- Not linked, no migration applied, schema still unverified.
+
+### Vercel
+
+- Imported project built as framework "Other" and failed with
+  `[STATIC_BUILD_NO_OUT_DIR] No Output Directory named "public" found`.
+  Cause: preset/output-directory configuration, not application code. Fix is
+  Framework Preset = Next.js and an empty Output Directory.
+- `engines.node` tightened from `>=22.12.0` to `>=22.12.0 <25` to silence the
+  Vercel auto-upgrade warning and stop a future Node major from breaking the
+  build.
+- Local `npm run build` re-verified on Node 24.22.0: 5 routes, passes.
+- No successful deployment yet; no URL tested.
+
 ## Decisions made during implementation
 
 | Decision | Reason |

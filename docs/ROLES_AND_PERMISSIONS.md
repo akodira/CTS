@@ -79,7 +79,7 @@ Design notes:
 
 ## 3. What RLS actually allows today
 
-RLS policies were written in `0008_functions_and_rls.sql`. No ticket mutation
+RLS policies were written in `20261101000008_functions_and_rls.sql`. No ticket mutation
 RPCs exist yet, so the practical surface is read-only.
 
 | Data | Customer | Support agent | Team leader | Admin | Management viewer |
